@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/nodemon.json",
+  "exec": "tsx ./src/index.ts",
+  "ext": "ts",
+  "watch": ["src"],
+  "events": {
+    "restart": "clear"
+  }
+}
