@@ -1,8 +1,10 @@
 import events from '@events/index.js';
 import { Event } from '@lib/builders/events.js';
-import { EPBot } from '@lib/client.js';
-import { EventName } from '@lib/types/events.js';
-import { ClientEvents } from 'discord.js';
+
+// Types
+import type { EPBot } from '@lib/client.js';
+import type { EventName } from '@lib/types/events.js';
+import type { ClientEvents } from 'discord.js';
 
 export async function loadEvents(client: EPBot): Promise<void> {
   for (const event of events) {

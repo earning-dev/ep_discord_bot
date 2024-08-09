@@ -1,5 +1,9 @@
 import { EventData, EventExec, EventName } from '@lib/types/events.js';
 
+/**
+ * Represents an event in the bot.
+ * @template T - The type of the event name.
+ */
 export class Event<T extends EventName> {
   public readonly data: EventData<T>;
 
@@ -19,8 +23,13 @@ export class Event<T extends EventName> {
   }
 }
 
+/**
+ * Creates a new event.
+ * @template T - The type of the event name.
+ * @param options - The options for the event.
+ * @returns The created event.
+ */
 export function event<T extends EventName>(options: EventData<T> & { exec: EventExec<T> }) {
   const { exec, ...rest } = options;
-  const event = new Event(options.name, exec, rest);
-  return event;
+  return new Event(options.name, exec, rest);
 }

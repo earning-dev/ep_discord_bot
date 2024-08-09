@@ -1,10 +1,10 @@
 import { Client } from 'discord.js';
+import { loadEvents } from './loaders/events.js';
 import { createLogger } from './utils/logger.js';
 
 // Types
 import type { EPBOptions } from './types/client.js';
 import type { Logger } from './types/logger.js';
-import { loadEvents } from './loaders/events.js';
 
 export class EPBot extends Client {
   public readonly eOptions: EPBOptions;
@@ -23,6 +23,7 @@ export class EPBot extends Client {
     this.log.debug('Loading events...');
     await loadEvents(this);
     this.log.debug('Events loaded.');
+
     return super.login(token);
   }
 }
