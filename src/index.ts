@@ -23,10 +23,11 @@ const client = new EPBot({
       ],
     },
   },
+  debug: true
 });
 
 try {
-  await client.login().then(() => console.log('Logged in!'));
+  await client.login();
 } catch (error) {
   console.error('Failed to login:\n', error);
 }

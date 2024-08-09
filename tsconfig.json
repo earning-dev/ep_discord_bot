@@ -15,6 +15,7 @@
     "skipLibCheck": true, 
     "paths": {
       "@lib/*": ["./src/lib/*"],
+      "@events/*": ["./src/events/*"],
     }
   },
   "include": ["./src/**/*.js", "./src/**/*.ts"]
