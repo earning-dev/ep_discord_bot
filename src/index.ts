@@ -3,14 +3,15 @@ import 'dotenv/config.js';
 import { EPBot } from '@lib/client.js';
 import { ActivityType, GatewayIntentBits, Partials } from 'discord.js';
 
-const { Guilds, GuildMessages, GuildMembers, MessageContent, GuildVoiceStates } = GatewayIntentBits;
+const { Guilds, GuildMessages, GuildMembers, MessageContent, GuildVoiceStates, GuildMessageReactions } =
+  GatewayIntentBits;
 
 const { Channel, GuildMember, Message, Reaction, ThreadMember, User } = Partials;
 
 const client = new EPBot({
   // Essentials
   clientOptions: {
-    intents: [Guilds, GuildMessages, GuildMembers, MessageContent, GuildVoiceStates],
+    intents: [Guilds, GuildMessages, GuildMembers, MessageContent, GuildVoiceStates, GuildMessageReactions],
     partials: [Channel, GuildMember, Message, Reaction, ThreadMember, User],
     presence: {
       status: 'dnd',
@@ -23,7 +24,7 @@ const client = new EPBot({
       ],
     },
   },
-  debug: true
+  debug: true,
 });
 
 try {
